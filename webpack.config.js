@@ -24,7 +24,7 @@ module.exports = {
 	},
 	resolve: {
 		alias: {
-			Main: __dirname + '/app/components/Main.jsx',
+			ToolTip: __dirname + '/app/components/ToolTip.jsx',
 			ApplicationStyles: __dirname + '/app/styles/app.scss'
 		},
 		extensions: ['.js','.jsx']

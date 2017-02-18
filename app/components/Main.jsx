@@ -3,12 +3,13 @@ var ReactDOM = require('react-dom');
 export class Main extends React.Component {  
 	constructor(props) {
 	    super(props)
-        this.state = {opacity: false};
+        this.state = {opacity: true};
         this.toggle = this.toggle.bind(this);
       }
 
      toggle() {
          const tooltipNode = ReactDOM.findDOMNode(this);
+         console.log(tooltipNode);
          this.setState({
            opacity: !this.state.opacity,
            top: tooltipNode.offsetTop,
@@ -28,12 +29,11 @@ export class Main extends React.Component {
 	            onMouseEnter={this.toggle}
 	            onMouseOut={this.toggle}>
 	            {this.props.children}
+	            {console.log(this.props)}
 	            </span>
-	            <div className="tooltip bottom"
-	                style={style}
-	                role="tooltip">
+	            <div className="tooltip bottom" style={style} role="tooltip">
 	                <div className="tooltip-arrow"></div>
-	                <div className="tooltip-inner">{this.props.text} </div>
+	                <div className="tooltip-inner">{this.props.text}</div>
 	            </div>
              </div>
            )
