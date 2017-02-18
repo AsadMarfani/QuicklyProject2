@@ -1,19 +1,14 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var {Route, Router, IndexRoute, hashHistory} = require('react-router');
-var Main = require('Main');
-
-//Load Foundation
-require('style-loader!css-loader!foundation-sites/dist/css/foundation.min.css');
-$(document).foundation();
+import { Main } from "Main";
 
 //Load Custom CSS
 require('style-loader!css-loader!sass-loader!ApplicationStyles');
 
 ReactDOM.render(
-    <Router history = {hashHistory}>
-    	<Route path = '/' component = {Main}>
-    	</Route>
-    </Router>,
+	<div>
+	 	<Main text="The book you're reading now">React Quickly</Main> was published in 2017. Its awesome!
+	 	<br/>I got <Main text = "Period for learning with professionals">Internship</Main> by reading this book.
+	 </div>, 
     document.getElementById('app')
 );
